@@ -30,7 +30,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const LOCATIONS: NaviMumbaiLocation[] = [
-    'Airoli', 'CBD Belapur', 'Dronagiri', 'Ghansoli', 'Kamothe',
+    'Airoli', 'Belapur', 'CBD Belapur', 'Dronagiri', 'Ghansoli', 'Kamothe',
     'Kalamboli', 'Kharghar', 'Kopar Khairane', 'Mansarovar', 'Nerul',
     'New Panvel', 'Panvel', 'Roadpali', 'Sanpada', 'Seawoods',
     'Sector 19', 'Taloja', 'Turbhe', 'Ulwe', 'Vashi',

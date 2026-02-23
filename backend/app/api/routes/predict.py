@@ -64,6 +64,12 @@ async def predict_price(request: PredictionRequest) -> PredictionResponse:
         result = ml_service.predict(request)
         logger.info("Prediction result: ₹%.0f", result.predicted_price)
         return result
+    except ValueError as exc:
+        logger.warning("Invalid prediction input: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(exc),
+        ) from exc
     except Exception as exc:
         logger.exception("Unexpected error during prediction: %s", exc)
         raise HTTPException(
@@ -85,7 +91,15 @@ async def get_locations() -> LocationsResponse:
     Returns:
         LocationsResponse with sorted list of location strings.
     """
-    locations = [loc.value for loc in NaviMumbaiLocation]
+    if ml_service.is_loaded:
+        # Use actual classes from the trained label encoder
+        locations = ml_service.get_known_locations()
+        # Capitalize for display
+        locations = [loc.title() if loc != "cbd belapur" else "CBD Belapur" for loc in locations]
+    else:
+        # Fallback to Enum values if model not loaded
+        locations = [loc.value for loc in NaviMumbaiLocation]
+    
     return LocationsResponse(locations=sorted(locations), total=len(locations))
 
 

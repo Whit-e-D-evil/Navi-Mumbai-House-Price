@@ -116,10 +116,20 @@ class MLService:
 
         Returns:
             A 2-D numpy array ready for model inference.
+
+        Raises:
+            ValueError: If the requested location is not supported by the model.
         """
-        location_encoded = self._label_encoder.transform(
-            [request.location.value.lower()]
-        )[0]
+        loc_lower = request.location.value.lower()
+        
+        if loc_lower not in self._label_encoder.classes_:
+            supported = ", ".join(self._label_encoder.classes_)
+            raise ValueError(
+                f"Location '{request.location.value}' is not supported by the current model. "
+                f"Supported: {supported}"
+            )
+
+        location_encoded = self._label_encoder.transform([loc_lower])[0]
 
         raw_features = np.array(
             [

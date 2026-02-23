@@ -103,6 +103,22 @@ export default function Navbar() {
                     </div>
 
                     <a
+                        href="/resume"
+                        style={{
+                            padding: '8px 18px',
+                            borderRadius: 'var(--radius-sm)',
+                            border: '1px solid rgba(99,102,241,0.3)',
+                            background: 'rgba(99,102,241,0.08)',
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: 'var(--color-indigo-400)',
+                            transition: 'all var(--transition-fast)',
+                        }}
+                    >
+                        My Resume
+                    </a>
+
+                    <a
                         href="https://github.com"
                         target="_blank"
                         rel="noopener noreferrer"

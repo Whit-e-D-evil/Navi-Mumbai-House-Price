@@ -16,6 +16,7 @@ class NaviMumbaiLocation(str, Enum):
     VASHI = "Vashi"
     NERUL = "Nerul"
     BELAPUR = "CBD Belapur"
+    BELAPUR_LOCAL = "Belapur"
     PANVEL = "Panvel"
     AIROLI = "Airoli"
     GHANSOLI = "Ghansoli"

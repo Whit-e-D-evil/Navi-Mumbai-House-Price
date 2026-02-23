@@ -18,50 +18,50 @@
       "lift"
     ],
     "metrics": {
-      "r2_score": 0.8384876499004834,
-      "mse": 15052499695806.896,
-      "rmse": 3879755.1077106525,
-      "mae": 2394045.7516062087
+      "r2_score": 0.8564071851771363,
+      "mse": 11065336014978.373,
+      "rmse": 3326459.98247061,
+      "mae": 2419748.770024498
     },
     "feature_importance": [
       {
         "name": "area_sqft",
-        "importance": 0.6549160816545135
-      },
-      {
-        "name": "bhk",
-        "importance": 0.08627471882338401
+        "importance": 0.6317042259400254
       },
       {
         "name": "age_of_property",
-        "importance": 0.08107966670786473
+        "importance": 0.10247632404995653
       },
       {
-        "name": "total_floors",
-        "importance": 0.06479415090841677
+        "name": "bhk",
+        "importance": 0.08776722266746806
       },
       {
         "name": "floor",
-        "importance": 0.05510970522803116
+        "importance": 0.06511232718894006
+      },
+      {
+        "name": "total_floors",
+        "importance": 0.05121486175115205
       },
       {
         "name": "location",
-        "importance": 0.03226774193548388
+        "importance": 0.03402342549923194
       },
       {
         "name": "bathrooms",
-        "importance": 0.0202891175380052
+        "importance": 0.013335253456221193
       },
       {
         "name": "parking",
-        "importance": 0.003978494623655915
+        "importance": 0.00921658986175115
       },
       {
         "name": "lift",
-        "importance": 0.0012903225806451617
+        "importance": 0.005149769585253455
       }
     ],
-    "training_time_ms": 5915
+    "training_time_ms": 18141
   },
   "configuration": {
     "epochs": 25,
@@ -70,7 +70,7 @@
     "test_split": 20
   },
   "dataset_info": {
-    "rows": 2450,
+    "rows": 2500,
     "columns": 10,
     "file_name": "navi_mumbai_real_estate_uncleaned_2500_cleaned.csv"
   },
@@ -79,151 +79,151 @@
       "model_id": "gradient_boost_reg",
       "model_name": "Gradient Boosting Regressor",
       "metrics": {
-        "r2_score": 0.8384876499004834,
-        "mse": 15052499695806.896,
-        "rmse": 3879755.1077106525,
-        "mae": 2394045.7516062087
+        "r2_score": 0.8564071851771363,
+        "mse": 11065336014978.373,
+        "rmse": 3326459.98247061,
+        "mae": 2419748.770024498
       },
       "feature_importance": [
         {
           "name": "area_sqft",
-          "importance": 0.6549160816545135
-        },
-        {
-          "name": "bhk",
-          "importance": 0.08627471882338401
+          "importance": 0.6317042259400254
         },
         {
           "name": "age_of_property",
-          "importance": 0.08107966670786473
+          "importance": 0.10247632404995653
         },
         {
-          "name": "total_floors",
-          "importance": 0.06479415090841677
+          "name": "bhk",
+          "importance": 0.08776722266746806
         },
         {
           "name": "floor",
-          "importance": 0.05510970522803116
+          "importance": 0.06511232718894006
+        },
+        {
+          "name": "total_floors",
+          "importance": 0.05121486175115205
         },
         {
           "name": "location",
-          "importance": 0.03226774193548388
+          "importance": 0.03402342549923194
         },
         {
           "name": "bathrooms",
-          "importance": 0.0202891175380052
+          "importance": 0.013335253456221193
         },
         {
           "name": "parking",
-          "importance": 0.003978494623655915
+          "importance": 0.00921658986175115
         },
         {
           "name": "lift",
-          "importance": 0.0012903225806451617
+          "importance": 0.005149769585253455
         }
       ],
-      "training_time_ms": 5915
+      "training_time_ms": 18141
     },
     {
       "model_id": "random_forest_reg",
       "model_name": "Random Forest Regressor",
       "metrics": {
-        "r2_score": 0.4284545119225891,
-        "mse": 53266442350223.61,
-        "rmse": 7298386.283982481,
-        "mae": 4639715.101779438
+        "r2_score": 0.5327186543769838,
+        "mse": 36008940344462.28,
+        "rmse": 6000744.982455285,
+        "mae": 4396695.52811499
       },
       "feature_importance": [
         {
           "name": "area_sqft",
-          "importance": 0.2458094284909765
-        },
-        {
-          "name": "age_of_property",
-          "importance": 0.20863891418065175
-        },
-        {
-          "name": "floor",
-          "importance": 0.12813984995758626
-        },
-        {
-          "name": "location",
-          "importance": 0.0930895127339914
+          "importance": 0.27494252828661564
         },
         {
           "name": "total_floors",
-          "importance": 0.09184375430317138
+          "importance": 0.13961650059926226
+        },
+        {
+          "name": "floor",
+          "importance": 0.13484711174230887
+        },
+        {
+          "name": "location",
+          "importance": 0.1263621924264048
+        },
+        {
+          "name": "age_of_property",
+          "importance": 0.10017411071927325
         },
         {
           "name": "bhk",
-          "importance": 0.09069867869870307
+          "importance": 0.07749443617949002
         },
         {
           "name": "bathrooms",
-          "importance": 0.08598884569080036
+          "importance": 0.07422796572906376
         },
         {
           "name": "lift",
-          "importance": 0.028171302764204372
+          "importance": 0.03649272553681262
         },
         {
           "name": "parking",
-          "importance": 0.02761971317991499
+          "importance": 0.03584242878076877
         }
       ],
-      "training_time_ms": 3891
+      "training_time_ms": 7902
     },
     {
       "model_id": "neural_net_reg",
       "model_name": "Neural Network (MLP)",
       "metrics": {
-        "r2_score": 0.8046168957843314,
-        "mse": 18209159330292.984,
-        "rmse": 4267219.156581132,
-        "mae": 2835299.4390836814
+        "r2_score": 0.8210484022276261,
+        "mse": 13790101978370.58,
+        "rmse": 3713502.656303154,
+        "mae": 2802569.013143564
       },
       "feature_importance": [
         {
           "name": "area_sqft",
-          "importance": 0.2458094284909765
-        },
-        {
-          "name": "age_of_property",
-          "importance": 0.20863891418065175
-        },
-        {
-          "name": "floor",
-          "importance": 0.12813984995758626
-        },
-        {
-          "name": "location",
-          "importance": 0.0930895127339914
+          "importance": 0.27494252828661564
         },
         {
           "name": "total_floors",
-          "importance": 0.09184375430317138
+          "importance": 0.13961650059926226
+        },
+        {
+          "name": "floor",
+          "importance": 0.13484711174230887
+        },
+        {
+          "name": "location",
+          "importance": 0.1263621924264048
+        },
+        {
+          "name": "age_of_property",
+          "importance": 0.10017411071927325
         },
         {
           "name": "bhk",
-          "importance": 0.09069867869870307
+          "importance": 0.07749443617949002
         },
         {
           "name": "bathrooms",
-          "importance": 0.08598884569080036
+          "importance": 0.07422796572906376
         },
         {
           "name": "lift",
-          "importance": 0.028171302764204372
+          "importance": 0.03649272553681262
         },
         {
           "name": "parking",
-          "importance": 0.02761971317991499
+          "importance": 0.03584242878076877
         }
       ],
-      "training_time_ms": 10635
+      "training_time_ms": 8904
     }
   ],
-  "python_reconstruction_script": "\"\"\"\nAuto-generated by Duxport ML Dashboard\nReconstructs the trained model in scikit-learn and saves as .pkl / .joblib\n\nUsage:\n  pip install scikit-learn pandas numpy joblib\n  python load_model.py\n\"\"\"\n\nimport json\nimport numpy as np\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import LabelEncoder, StandardScaler\nimport joblib\nimport pickle\n\n# ── Configuration ──\nTASK_TYPE = \"regression\"\nTARGET_COLUMN = \"actual_price\"\nFEATURES = [\"location\",\"area_sqft\",\"bhk\",\"bathrooms\",\"floor\",\"total_floors\",\"age_of_property\",\"parking\",\"lift\"]\nBEST_MODEL = \"gradient_boost_reg\"\nTEST_SPLIT = 0.2\n\n# Best model metrics from browser training:\n# r2_score: 0.8385, mse: 15052499695806.8965, rmse: 3879755.1077, mae: 2394045.7516\n\nprint(f\"Setting up {BEST_MODEL} for {TASK_TYPE} task...\")\nprint(f\"Target: {TARGET_COLUMN}, Features: {len(FEATURES)}\")\n\n\nfrom sklearn.linear_model import LinearRegression, Ridge\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor\nfrom sklearn.neighbors import KNeighborsRegressor\nfrom sklearn.svm import SVR\nfrom sklearn.neural_network import MLPRegressor\n\nMODELS = {\n    \"linear_regression\": LinearRegression(),\n    \"ridge_regression\": Ridge(alpha=1.0),\n    \"decision_tree_reg\": DecisionTreeRegressor(max_depth=10, random_state=42),\n    \"random_forest_reg\": RandomForestRegressor(n_estimators=100, random_state=42),\n    \"gradient_boost_reg\": GradientBoostingRegressor(n_estimators=100, random_state=42),\n    \"knn_reg\": KNeighborsRegressor(n_neighbors=5),\n    \"svr\": SVR(),\n    \"neural_net_reg\": MLPRegressor(hidden_layer_sizes=(64, 32), max_iter=25, random_state=42),\n}\n\n# Load your CSV:\ndf = pd.read_csv(\"navi_mumbai_real_estate_uncleaned_2500_cleaned.csv\")\nX = df[FEATURES]\ny = df[TARGET_COLUMN]\n\n# Encode categoricals\nfor col in X.select_dtypes(include=['object']).columns:\n    X[col] = LabelEncoder().fit_transform(X[col].astype(str))\n\n\n# Scale features\nscaler = StandardScaler()\nX = pd.DataFrame(scaler.fit_transform(X), columns=X.columns)\n\n# Train/test split\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SPLIT, random_state=42)\n\n# Train the best model\nmodel = MODELS.get(BEST_MODEL, list(MODELS.values())[0])\nprint(f\"\\nTraining {model.__class__.__name__}...\")\nmodel.fit(X_train, y_train)\nscore = model.score(X_test, y_test)\nprint(f\"Test Score: {score:.4f}\")\n\n# Save as .pkl\nwith open(\"model.pkl\", \"wb\") as f:\n    pickle.dump({\"model\": model, \"scaler\": scaler, \"features\": FEATURES, \"target\": TARGET_COLUMN}, f)\nprint(\"Saved: model.pkl\")\n\n# Save as .joblib\njoblib.dump({\"model\": model, \"scaler\": scaler, \"features\": FEATURES, \"target\": TARGET_COLUMN}, \"model.joblib\")\nprint(\"Saved: model.joblib\")\n\nprint(\"\\nDone! Load with: pickle.load(open('model.pkl','rb')) or joblib.load('model.joblib')\")\n",
-  "exported_at": "2026-02-23T09:40:57.402Z",
+  "python_reconstruction_script": "\"\"\"\nAuto-generated by Duxport ML Dashboard\nReconstructs the trained model in scikit-learn and saves as .pkl / .joblib\n\nUsage:\n  pip install scikit-learn pandas numpy joblib\n  python load_model.py\n\"\"\"\n\nimport json\nimport numpy as np\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import LabelEncoder, StandardScaler\nimport joblib\nimport pickle\n\n# ── Configuration ──\nTASK_TYPE = \"regression\"\nTARGET_COLUMN = \"actual_price\"\nFEATURES = [\"location\",\"area_sqft\",\"bhk\",\"bathrooms\",\"floor\",\"total_floors\",\"age_of_property\",\"parking\",\"lift\"]\nBEST_MODEL = \"gradient_boost_reg\"\nTEST_SPLIT = 0.2\n\n# Best model metrics from browser training:\n# r2_score: 0.8564, mse: 11065336014978.3730, rmse: 3326459.9825, mae: 2419748.7700\n\nprint(f\"Setting up {BEST_MODEL} for {TASK_TYPE} task...\")\nprint(f\"Target: {TARGET_COLUMN}, Features: {len(FEATURES)}\")\n\n\nfrom sklearn.linear_model import LinearRegression, Ridge\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor\nfrom sklearn.neighbors import KNeighborsRegressor\nfrom sklearn.svm import SVR\nfrom sklearn.neural_network import MLPRegressor\n\nMODELS = {\n    \"linear_regression\": LinearRegression(),\n    \"ridge_regression\": Ridge(alpha=1.0),\n    \"decision_tree_reg\": DecisionTreeRegressor(max_depth=10, random_state=42),\n    \"random_forest_reg\": RandomForestRegressor(n_estimators=100, random_state=42),\n    \"gradient_boost_reg\": GradientBoostingRegressor(n_estimators=100, random_state=42),\n    \"knn_reg\": KNeighborsRegressor(n_neighbors=5),\n    \"svr\": SVR(),\n    \"neural_net_reg\": MLPRegressor(hidden_layer_sizes=(64, 32), max_iter=25, random_state=42),\n}\n\n# Load your CSV:\ndf = pd.read_csv(\"navi_mumbai_real_estate_uncleaned_2500_cleaned.csv\")\nX = df[FEATURES]\ny = df[TARGET_COLUMN]\n\n# Encode categoricals\nfor col in X.select_dtypes(include=['object']).columns:\n    X[col] = LabelEncoder().fit_transform(X[col].astype(str))\n\n\n# Scale features\nscaler = StandardScaler()\nX = pd.DataFrame(scaler.fit_transform(X), columns=X.columns)\n\n# Train/test split\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SPLIT, random_state=42)\n\n# Train the best model\nmodel = MODELS.get(BEST_MODEL, list(MODELS.values())[0])\nprint(f\"\\nTraining {model.__class__.__name__}...\")\nmodel.fit(X_train, y_train)\nscore = model.score(X_test, y_test)\nprint(f\"Test Score: {score:.4f}\")\n\n# Save as .pkl\nwith open(\"model.pkl\", \"wb\") as f:\n    pickle.dump({\"model\": model, \"scaler\": scaler, \"features\": FEATURES, \"target\": TARGET_COLUMN}, f)\nprint(\"Saved: model.pkl\")\n\n# Save as .joblib\njoblib.dump({\"model\": model, \"scaler\": scaler, \"features\": FEATURES, \"target\": TARGET_COLUMN}, \"model.joblib\")\nprint(\"Saved: model.joblib\")\n\nprint(\"\\nDone! Load with: pickle.load(open('model.pkl','rb')) or joblib.load('model.joblib')\")\n",
+  "exported_at": "2026-02-23T16:21:02.420Z",
   "_note": "This is a Duxport model package. Use the included python_reconstruction_script to reconstruct a scikit-learn model from your CSV data."
 }

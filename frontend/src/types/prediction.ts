@@ -7,6 +7,7 @@ export type NaviMumbaiLocation =
     | 'Kharghar'
     | 'Vashi'
     | 'Nerul'
+    | 'Belapur'
     | 'CBD Belapur'
     | 'Panvel'
     | 'Airoli'
