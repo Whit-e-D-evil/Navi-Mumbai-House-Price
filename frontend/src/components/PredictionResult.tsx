@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
     BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
@@ -101,10 +102,11 @@ export default function PredictionResult({ result }: PredictionResultProps) {
                             transition={{ duration: 0.5, delay: 0.3 + i * 0.15 }}
                             style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', height: 160, boxShadow: '0 10px 25px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }}
                         >
-                            <img
+                            <Image
                                 src={img.url}
                                 alt={img.label}
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                fill
+                                style={{ objectFit: 'cover' }}
                             />
                             <div style={{
                                 position: 'absolute',
