@@ -1,0 +1,23 @@
+# Navi Mumbai House Price Predictor — Backend Dependencies
+# Python 3.11+ (Compatible with Python 3.14 via Pydantic v2)
+
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]
+
+# ML stack
+scikit-learn
+numpy
+pandas
+joblib
+
+# Configuration (Allowing latest for 3.14 compatibility)
+pydantic>=2.10.0
+pydantic-settings>=2.7.0
+
+# HTTP client
+httpx
+
+# Testing
+pytest
+pytest-asyncio

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: navi-mumbai-house-price-api
+    env: python
+    plan: free
+    region: singapore   # Closest to India on Render free tier
+    buildCommand: >
+      pip install --upgrade pip &&
+      pip install -r requirements.txt &&
+      python train_model.py
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_ORIGINS
+        value: "https://navimumbai-house-price.vercel.app,https://*.vercel.app"

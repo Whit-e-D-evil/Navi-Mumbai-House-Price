@@ -1,0 +1,16 @@
+# ignore compiled python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ignore model binaries (generated at build time)
+models/*.pkl
+models/*.joblib
+
+# ignore environment files with secrets
+.env
+
+# ignore IDE and OS artifacts
+.vscode/
+.idea/
+*.DS_Store
