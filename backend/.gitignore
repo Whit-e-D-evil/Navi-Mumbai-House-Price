@@ -3,9 +3,9 @@ __pycache__/
 *.py[cod]
 *.pyo
 
-# ignore model binaries (generated at build time)
-models/*.pkl
-models/*.joblib
+# ignore model binaries (REMOVED: committing to ensure availability on Render)
+# models/*.pkl
+# models/*.joblib
 
 # ignore environment files with secrets
 .env
