@@ -161,7 +161,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
-                    style={{ marginBottom: 80 }}
+                    style={{ marginBottom: 80, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}
                 >
                     <a
                         href="#predict"
@@ -182,6 +182,21 @@ export default function Hero() {
                     >
                         Get Price Estimate →
                     </a>
+
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        fontSize: 12,
+                        color: 'rgba(255,255,255,0.5)',
+                        background: 'rgba(255,255,255,0.03)',
+                        padding: '6px 12px',
+                        borderRadius: 20,
+                        border: '1px solid rgba(255,255,255,0.05)',
+                    }}>
+                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#f59e0b' }} />
+                        Note: First prediction may take ~60s if the server is waking up.
+                    </div>
                 </motion.div>
 
                 {/* Stats row */}
