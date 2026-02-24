@@ -12,9 +12,10 @@ import {
     PredictionResponse,
 } from '@/types/prediction';
 
-const API_BASE_URL =
-    process.env.NEXT_PUBLIC_API_URL ||
-    'https://navi-mumbai-house-price-api.onrender.com';
+const NEXT_PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://navi-mumbai-house-price-2.onrender.com';
+
+// Ensure no trailing slash to prevent double-slash issues (e.g. //api/v1/predict)
+const API_BASE_URL = NEXT_PUBLIC_API_URL.replace(/\/$/, '');
 
 const API_PREFIX = '/api/v1';
 

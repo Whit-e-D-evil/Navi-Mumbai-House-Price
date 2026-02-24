@@ -4,6 +4,6 @@
         "sin1"
     ],
     "env": {
-        "NEXT_PUBLIC_API_URL": "https://navi-mumbai-house-price-api.onrender.com"
+        "NEXT_PUBLIC_API_URL": "https://navi-mumbai-house-price-2.onrender.com"
     }
 }
