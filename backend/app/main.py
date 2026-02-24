@@ -9,7 +9,7 @@ import logging.config
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
@@ -108,6 +108,13 @@ def create_app() -> FastAPI:
                 "health": f"{prefix}/health",
             }
         )
+
+    # ── Favicon ───────────────────────────────────────────────────────────────
+
+    @app.get("/favicon.ico", include_in_schema=False)
+    async def favicon() -> Response:
+        """Handles favicon requests — returns 204 No Content to avoid 404 logs."""
+        return Response(status_code=204)
 
     return app
 

@@ -1,0 +1,151 @@
+%-------------------------
+% Resume in Latex
+% Author : Suryansh
+% Template credit: Jake Gutierrez
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Suryansh} \\ \vspace{1pt}
+    \small 1st Year Engineering Student \\ \vspace{1pt}
+    \small \href{mailto:email@example.com}{\underline{email@example.com}} $|$ 
+    \href{https://linkedin.com/in/username}{\underline{linkedin.com/in/username}} $|$
+    \href{https://github.com/username}{\underline{github.com/username}}
+\end{center}
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+ \resumeSubHeadingListStart
+    \small{First-year AI \& Data Science engineering student with hands-on experience building production-grade ML applications and full-stack web projects. Passionate about the intersection of machine learning and scalable web architecture, with a focus on delivering end-to-end solutions from data pipelines to interactive frontends.}
+ \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Lokmanya Tilak College of Engineering (LTCE)}{Navi Mumbai, India}
+      {B.S. in Engineering (Artificial Intelligence \& Data Science)}{2024 -- Present}
+    \resumeSubheading
+      {Maharashtra State Board}{Mumbai, India}
+      {Higher Secondary Education}{Completed 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{NaviPriceAI --- Real Estate Predictor} $|$ \emph{FastAPI, Next.js, Scikit-Learn}}{2024}
+          \resumeItemListStart
+            \resumeItem{Engineered an end-to-end Machine Learning web application to predict property prices in Navi Mumbai.}
+            \resumeItem{Implemented a Gradient Boosting Regressor achieving 84\% accuracy on a dataset of 2,450+ property listings.}
+            \resumeItem{Built a responsive Next.js frontend featuring real-time price predictions and a polished, animated UI.}
+            \resumeItem{Designed a RESTful API backend using FastAPI for low-latency, high-performance model serving.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Real Estate Data Pipeline} $|$ \emph{Pandas, NumPy, Scrapy}}{2024}
+          \resumeItemListStart
+            \resumeItem{Architected a custom ETL pipeline for cleaning and processing large-scale Mumbai property market data.}
+            \resumeItem{Automated detection and treatment of missing values and outliers across categorical and numerical features.}
+            \resumeItem{Produced clean, structured datasets enabling downstream feature engineering for property valuation models.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, JavaScript, SQL, HTML/CSS} \\
+     \textbf{Frameworks}{: Next.js, React, FastAPI, Flask} \\
+     \textbf{Libraries}{: Scikit-Learn, Pandas, NumPy, Matplotlib, Framer Motion} \\
+     \textbf{Tools}{: Git, Docker, Render, Vercel, VS Code, Overleaf} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

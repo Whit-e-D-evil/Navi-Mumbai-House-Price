@@ -79,6 +79,22 @@ export default function Navbar() {
 
                 {/* Right side */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                    <a
+                        href="/"
+                        style={{
+                            padding: '8px 18px',
+                            borderRadius: 'var(--radius-sm)',
+                            border: '1px solid var(--color-border)',
+                            background: 'rgba(255,255,255,0.04)',
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: 'var(--color-text-secondary)',
+                            transition: 'all var(--transition-fast)',
+                        }}
+                    >
+                        NaviPriceAI
+                    </a>
+
                     <div style={{
                         display: 'flex',
                         alignItems: 'center',

@@ -11,7 +11,9 @@ import {
     User,
     Award,
     Briefcase,
-    ExternalLink
+    ExternalLink,
+    FileDown,
+    FileCode
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -51,30 +53,100 @@ export default function ResumePage() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="glass-card mb-12 overflow-hidden"
-                    style={{ padding: 0 }}
+                    style={{ padding: '40px' }}
                 >
-                    <div style={{ height: 120, background: 'linear-gradient(135deg, #4299e1, #6366f1)', opacity: 0.8 }} />
-                    <div style={{ padding: '0 40px 40px', marginTop: -60 }}>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'flex-start' }}>
-                            <div style={{
-                                width: 120, height: 120, borderRadius: 30,
-                                background: 'rgba(13,21,40,0.9)',
-                                border: '4px solid #060b18',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-                            }}>
-                                <User size={60} color="#818cf8" />
-                            </div>
-                            <div style={{ flex: 1, paddingTop: 60 }}>
-                                <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 900, fontFamily: 'var(--font-heading)', color: '#fff', marginBottom: 8 }}>
-                                    Suryansh
-                                </h1>
-                                <p style={{ fontSize: 18, color: 'var(--color-indigo-400)', fontWeight: 600, marginBottom: 20 }}>
-                                    AI & Machine Learning Enthusiast
-                                </p>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, fontSize: 14, color: 'var(--color-text-secondary)' }}>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><GraduationCap size={16} /> 1st Year, Lokmanya Tilak College of Engineering</div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><MapPin size={16} /> Mumbai, India</div>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        gap: 32,
+                        alignItems: 'center',
+                        flexWrap: 'wrap'
+                    }}>
+                        <div style={{
+                            width: 140, height: 140, borderRadius: 32,
+                            background: 'rgba(13,21,40,0.95)',
+                            border: '4px solid rgba(255,255,255,0.05)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                            zIndex: 10
+                        }}>
+                            <User size={70} color="#818cf8" />
+                        </div>
+                        <div style={{ flex: 1, minWidth: 300 }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 20 }}>
+                                <div>
+                                    <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 900, fontFamily: 'var(--font-heading)', color: '#fff', marginBottom: 4 }}>
+                                        Suryansh
+                                    </h1>
+                                    <p style={{ fontSize: 18, color: 'var(--color-indigo-400)', fontWeight: 600, marginBottom: 16 }}>
+                                        Electrical Engineer
+                                    </p>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, fontSize: 14, color: 'var(--color-text-secondary)' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><GraduationCap size={16} /> 1st Year, LTCE</div>
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><MapPin size={16} /> Mumbai, India</div>
+                                    </div>
+                                </div>
+                                <div style={{ display: 'flex', gap: 12 }}>
+                                    <a
+                                        href="/resumes/resume.pdf"
+                                        download="Suryansh_Resume.pdf"
+                                        className="glass-card"
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: 8,
+                                            padding: '10px 20px',
+                                            background: 'rgba(99,102,241,0.15)',
+                                            border: '1px solid rgba(99,102,241,0.4)',
+                                            borderRadius: 14,
+                                            fontSize: 13,
+                                            fontWeight: 700,
+                                            color: '#fff',
+                                            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        }}
+                                        onMouseOver={(e) => {
+                                            e.currentTarget.style.background = 'rgba(99,102,241,0.25)';
+                                            e.currentTarget.style.transform = 'translateY(-3px)';
+                                            e.currentTarget.style.boxShadow = '0 10px 20px -10px rgba(99,102,241,0.5)';
+                                        }}
+                                        onMouseOut={(e) => {
+                                            e.currentTarget.style.background = 'rgba(99,102,241,0.15)';
+                                            e.currentTarget.style.transform = 'translateY(0)';
+                                            e.currentTarget.style.boxShadow = 'none';
+                                        }}
+                                    >
+                                        <FileDown size={18} />
+                                        Resume PDF
+                                    </a>
+                                    <a
+                                        href="/resumes/resume.tex"
+                                        download="Suryansh_Resume.tex"
+                                        className="glass-card"
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: 8,
+                                            padding: '10px 20px',
+                                            background: 'rgba(255,255,255,0.03)',
+                                            border: '1px solid rgba(255,255,255,0.12)',
+                                            borderRadius: 14,
+                                            fontSize: 13,
+                                            fontWeight: 700,
+                                            color: 'var(--color-text-secondary)',
+                                            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                                        }}
+                                        onMouseOver={(e) => {
+                                            e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                                            e.currentTarget.style.transform = 'translateY(-3px)';
+                                        }}
+                                        onMouseOut={(e) => {
+                                            e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                                            e.currentTarget.style.transform = 'translateY(0)';
+                                        }}
+                                    >
+                                        <FileCode size={18} />
+                                        Resume LaTeX
+                                    </a>
                                 </div>
                             </div>
                         </div>
