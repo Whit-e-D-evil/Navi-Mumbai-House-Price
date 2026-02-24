@@ -20,11 +20,11 @@ class Settings(BaseSettings):
         "https://navimumbai-house-price.vercel.app",
     ]
 
-    # Model paths (relative to backend root)
-    model_dir: Path = Path("models")
-    model_path: Path = Path("models/model.pkl")
-    scaler_path: Path = Path("models/scaler.pkl")
-    label_encoder_path: Path = Path("models/label_encoder.pkl")
+    # Model paths (absolute, relative to the backend root)
+    model_dir: Path = Path(__file__).parent.parent.parent / "models"
+    model_path: Path = Path(__file__).parent.parent.parent / "models/model.pkl"
+    scaler_path: Path = Path(__file__).parent.parent.parent / "models/scaler.pkl"
+    label_encoder_path: Path = Path(__file__).parent.parent.parent / "models/label_encoder.pkl"
 
     model_config = {
         "env_file": ".env",

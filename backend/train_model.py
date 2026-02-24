@@ -35,9 +35,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-
+# Use absolute paths relative to the script's directory for robust cloud deployment
+BASE_DIR = Path(__file__).parent.resolve()
 RANDOM_STATE = 42
-MODEL_DIR = Path("models")
+MODEL_DIR = BASE_DIR / "models"
 MODEL_PATH = MODEL_DIR / "model.pkl"
 SCALER_PATH = MODEL_DIR / "scaler.pkl"
 LABEL_ENCODER_PATH = MODEL_DIR / "label_encoder.pkl"
@@ -280,8 +281,19 @@ def train_and_save() -> None:
         pickle.dump(label_encoder, f)
     logger.info("Saved label encoder → %s", LABEL_ENCODER_PATH)
 
+    # Step 7 — Verify artifacts
+    missing_artifacts = []
+    for path in [MODEL_PATH, SCALER_PATH, LABEL_ENCODER_PATH]:
+        if not path.exists():
+            missing_artifacts.append(path.name)
+    
+    if missing_artifacts:
+        error_msg = f"CRITICAL: Failed to save artifacts: {missing_artifacts}"
+        logger.error(error_msg)
+        raise FileNotFoundError(error_msg)
+
     logger.info(
-        "✅ Training complete. R²=%.4f | Artifacts in %s/",
+        "✅ Training complete. R²=%.4f | Artifacts verified in %s/",
         r2,
         MODEL_DIR,
     )
