@@ -1,6 +1,7 @@
 from functools import lru_cache
 from pathlib import Path
-
+from typing import Any, Union
+from pydantic import field_validator
 from pydantic_settings import BaseSettings
 
 
@@ -14,11 +15,25 @@ class Settings(BaseSettings):
     debug: bool = False
 
     # CORS configuration
-    allowed_origins: list[str] = [
+    allowed_origins: Union[list[str], str] = [
         "http://localhost:3000",
         "https://*.vercel.app",
         "https://navimumbai-house-price.vercel.app",
     ]
+
+    @field_validator("allowed_origins", mode="before")
+    @classmethod
+    def assemble_cors_origins(cls, v: Any) -> list[str]:
+        """Parses comma-separated string into a list of origins."""
+        if isinstance(v, str):
+            if v.startswith("[") and v.endswith("]"):
+                import json
+                try:
+                    return json.loads(v)
+                except:
+                    pass
+            return [i.strip() for i in v.split(",") if i.strip()]
+        return v
 
     # Model paths (absolute, relative to the backend root)
     model_dir: Path = Path(__file__).parent.parent.parent / "models"

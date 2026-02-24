@@ -1,5 +1,5 @@
 'use client';
-
+import { useMemo } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
@@ -10,6 +10,54 @@ import {
 } from 'lucide-react';
 import { PredictionResponse } from '@/types/prediction';
 import { formatIndianCurrency, toIndianLocale } from '@/lib/utils';
+
+const PREDICTION_IMAGES = [
+    'brandon-griggs-wR11KBaB86U-unsplash.jpg',
+    'compagnons-CwTfKH5edSk-unsplash.jpg',
+    'danilo-rios-AgK_XAqSbfk-unsplash.jpg',
+    'davide-colonna-DZrZhVd_wR0-unsplash.jpg',
+    'deborah-cortelazzi-gREquCUXQLI-unsplash.jpg',
+    'frames-for-your-heart-FqqiAvJejto-unsplash.jpg',
+    'francesca-tosolini-tHkJAMcO3QE-unsplash.jpg',
+    'huy-nguyen-9vvp_nuVaJk-unsplash.jpg',
+    'huy-nguyen-AB-q9lwCVv8-unsplash.jpg',
+    'julia-aX1TTOuq83M-unsplash.jpg',
+    'kara-eads-L7EwHkq1B2s-unsplash.jpg',
+    'marlene-celine-nordvik-5q1KnUjtjaM-unsplash.jpg',
+    'med-badr-chemmaoui-xtDpXi_a-YQ-unsplash (1).jpg',
+    'med-badr-chemmaoui-xtDpXi_a-YQ-unsplash.jpg',
+    'minh-pham-7pCFUybP_P8-unsplash.jpg',
+    'naomi-hebert-MP0bgaS_d1c-unsplash.jpg',
+    'patrick-perkins-3wylDrjxH-E-unsplash.jpg',
+    'patrick-perkins-iRiVzALa4pI-unsplash.jpg',
+    'pexels-andreaedavis-5417293.jpg',
+    'pexels-artbovich-5998120.jpg',
+    'pexels-artbovich-6077368.jpg',
+    'pexels-artbovich-6782424.jpg',
+    'pexels-artbovich-7005295.jpg',
+    'pexels-artbovich-7019026.jpg',
+    'pexels-artbovich-7511693.jpg',
+    'pexels-athena-6782749.jpg',
+    'pexels-fatin-hisham-877992-2081331.jpg',
+    'pexels-orlovamaria-4906392.jpg',
+    'point3d-commercial-imaging-ltd-Cu2xZLKgn10-unsplash.jpg',
+    'prydumano-design-vYlmRFIsCIk-unsplash.jpg',
+    'roberto-nickson-rEJxpBskj3Q-unsplash.jpg',
+    'timothy-buck-psrloDbaZc8-unsplash.jpg',
+];
+
+const PREDICTION_LABELS = [
+    'Modern Living Space',
+    'Premium Architecture',
+    'Vibrant Interior',
+    'Elegant Bedroom',
+    'Spacious Kitchen',
+    'Luxury Bathroom',
+    'Urban View',
+    'Cozy Lounge',
+    'Contemporary Design',
+    'High-end Finishes',
+];
 
 const FEATURE_IMPORTANCE = [
     { display_name: 'Area (sq ft)', importance: 65.5 },
@@ -57,6 +105,15 @@ interface PredictionResultProps {
 export default function PredictionResult({ result }: PredictionResultProps) {
     const confidencePct = Math.round(result.confidence_score * 100);
 
+    const randomImages = useMemo(() => {
+        // Shuffle and pick 3
+        const shuffled = [...PREDICTION_IMAGES].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, 3).map((filename, i) => ({
+            url: `/images/predictions/${filename}`,
+            label: PREDICTION_LABELS[Math.floor(Math.random() * PREDICTION_LABELS.length)],
+        }));
+    }, [result]);
+
     return (
         <motion.div
             id="result"
@@ -90,11 +147,7 @@ export default function PredictionResult({ result }: PredictionResultProps) {
                     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                     gap: 16,
                 }}>
-                    {[
-                        { url: '/images/hero/hero-2.jpg', label: 'Modern Living Space' },
-                        { url: '/images/hero/hero-5.jpg', label: 'Premium Architecture' },
-                        { url: '/images/hero/hero-9.jpg', label: 'Vibrant Interior' },
-                    ].map((img, i) => (
+                    {randomImages.map((img, i) => (
                         <motion.div
                             key={img.url}
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
