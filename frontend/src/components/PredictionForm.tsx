@@ -328,7 +328,7 @@ export default function PredictionForm({ onResult }: PredictionFormProps) {
                 </div>
 
                 {/* Submit */}
-                <button type="submit" className="btn-primary" disabled={loading}>
+                <button type="submit" className="btn-primary" disabled={loading} style={{ marginBottom: 12 }}>
                     <AnimatePresence mode="wait">
                         {loading ? (
                             <motion.span
@@ -355,6 +355,18 @@ export default function PredictionForm({ onResult }: PredictionFormProps) {
                         )}
                     </AnimatePresence>
                 </button>
+
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 6,
+                    fontSize: 11,
+                    color: 'var(--color-text-muted)',
+                }}>
+                    <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#f59e0b' }} />
+                    Note: First request may take ~1 min due to server wake-up.
+                </div>
             </form>
 
             <style jsx>{`
